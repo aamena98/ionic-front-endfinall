@@ -1,0 +1,66 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>Leave</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+</ion-content> -->
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start" >
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>LEAVE</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-item>
+        <ion-label>From Date:</ion-label>
+        <!-- <ion-datetime display-format="YYYY-MM-DD" picker-format="YYYY-MM-DD"></ion-datetime> -->
+        <!-- <ion-datetime displayFormat="YYYY-MM-DD" pickerFormat="YYYY-MM-DD" [(ngModel)]="myDate"   ></ion-datetime>
+        <ion-datetime displayFormat="D MMM, YY" pickerFormat="DD MMM YYYY" [(ngModel)]="startdate" formControlName="enddate" [min]="minStartDate()"></ion-datetime> -->
+        <!-- <ion-datetime displayFormat="D MMM, YY" pickerFormat="DD MMM YYYY" [(ngModel)]="startdate" formControlName="enddate" [min]="minStartDate()"></ion-datetime> -->
+        <!-- <ion-datetime [min]="minDate" [max]="finishMaxDate" displayFormat="DD-MM-YYYY" pickerFormat="DD MM YYYY" [(ngModel)]="eventData.startEventDate"
+        placeholder="From Date" (ngModelChange)="startDateChanged()"></ion-datetime> -->
+        <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="l_fromdate"
+        [min]="minDate"></ion-datetime>
+        <ion-icon name="calendar" right></ion-icon>
+        
+      </ion-item>
+      <ion-item>
+          <ion-label>To Date:</ion-label>
+          <!-- <ion-datetime display-format="YYYY-MM-DD" picker-format="YYYY-MM-DD"></ion-datetime> -->
+          <ion-datetime displayFormat="MM/DD/YYYY"
+        [min]="minDate" [(ngModel)]="l_todate"></ion-datetime>
+        <ion-icon name="calendar" right></ion-icon>
+        
+          <ion-icon name="calendar" right></ion-icon>
+        
+        </ion-item>
+        <!-- <ion-item> 
+                <ion-label>Total Days:</ion-label>
+        <ion-input [(ngModel)]="totalDays"></ion-input>
+      </ion-item> -->
+      <ion-item>
+          <ion-label>Leave Type:</ion-label>
+          <ion-select placeholder="Select One" [(ngModel)]="l_type">
+              <ion-select-option value="sick">Sick Leave</ion-select-option>
+              <ion-select-option value="one">One day Leave</ion-select-option>
+              <ion-select-option value="half">Half day Leave</ion-select-option>
+              <ion-select-option value="others">Others</ion-select-option>
+            </ion-select>
+        </ion-item>
+          <ion-item>
+              <ion-label position="floating">Description</ion-label>
+              <ion-textarea [(ngModel)]="l_description"></ion-textarea>
+            </ion-item>
+          
+                <ion-button expand="block" fill="outline" color="primary" (click)="sendLeave()">Request Leave
+                <ion-icon name="send"></ion-icon> 
+              </ion-button>
+          </ion-content>
+          <!-- useCurrentTimeAsDefaultValue="true" -->
+          <!-- [min]="today" -->
